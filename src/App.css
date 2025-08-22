@@ -1,0 +1,821 @@
+/* ---------- Global Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ---------- Page Background (Login + Register) ---------- */
+.login-page,
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  padding: 20px;
+}
+
+/* ---------- Container ---------- */
+.login-container,
+.register-container {
+  width: 100%;
+  max-width: 450px;
+  padding: 20px;
+}
+
+.login-box,
+.register-box {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-box:hover,
+.register-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------- Title ---------- */
+.login-title,
+.register-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: #222;
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---------- Form Groups ---------- */
+.login-form .form-group,
+.register-form .form-group {
+  margin-bottom: 20px;
+}
+
+.login-form label,
+.register-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #444;
+  font-size: 15px;
+}
+
+.login-form input,
+.register-form input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.3s ease;
+  background: #fafafa;
+}
+
+.login-form input:focus,
+.register-form input:focus {
+  border-color: #ee0979;
+  background: #fff;
+  box-shadow: 0 0 8px rgba(238, 9, 121, 0.25);
+}
+
+/* ---------- Profile Upload (Register Only) ---------- */
+.profile-upload {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  border: 3px solid #ccc;
+  transition: all 0.3s ease;
+}
+
+.profile-img:hover {
+  border-color: #ee0979;
+  transform: scale(1.05);
+}
+
+.hidden-input {
+  display: none;
+}
+
+/* ---------- Buttons ---------- */
+.login-btn,
+.register-btn {
+  width: 100%;
+  padding: 14px 0;
+  background: linear-gradient(135deg, #ee0979, #ff6a00);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover,
+.register-btn:hover {
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  transform: scale(1.02);
+}
+
+/* ---------- Links ---------- */
+.register-link,
+.login-link {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 14px;
+  color: #555;
+}
+
+.register-link span,
+.login-link span {
+  color: #ee0979;
+  cursor: pointer;
+  font-weight: 600;
+  margin-left: 5px;
+  transition: color 0.3s ease;
+}
+
+.register-link span:hover,
+.login-link span:hover {
+  color: #ff6a00;
+  text-decoration: underline;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 500px) {
+  .login-box,
+  .register-box {
+    padding: 30px 20px;
+  }
+
+  .login-title,
+  .register-title {
+    font-size: 24px;
+  }
+
+  .login-btn,
+  .register-btn {
+    font-size: 15px;
+    padding: 12px 0;
+  }
+
+  .profile-img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* ============== Global Reset ============== */
+/* ---------- Home Page ---------- */
+.home-page {
+  display: flex;
+  height: 100vh;
+  background-color: #f0f2f5;
+}
+
+.home-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar-container {
+  width: 25%;
+  height: 100%;
+  background-color: #ff9800; /* Stylish orange background */
+  overflow-y: auto;
+  border-right: 1px solid #ddd;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.chat-container {
+  width: 75%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: #f8f9fa;
+  position: relative;
+}
+
+/* ---------- Chat Page ---------- */
+.chat-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.chat-no-user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.chat-no-user h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #555;
+  background: #fff;
+  padding: 15px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0f2f5;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.chat-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chat-header-profile {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.chat-header-name {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.chat-header-right button {
+  font-size: 20px;
+  background: none;
+  border: none;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  margin-top: 65px; /* space for header */
+}
+
+.chat-message {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.chat-message-end {
+  justify-content: flex-end;
+}
+
+.chat-message-start {
+  justify-content: flex-start;
+}
+
+.chat-bubble {
+  padding: 10px 15px;
+  border-radius: 20px;
+  max-width: 60%;
+  word-wrap: break-word;
+}
+
+.chat-bubble-sent {
+  background-color: #d1f7c4;
+  color: #000;
+}
+
+.chat-bubble-received {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+}
+
+.chat-input-container {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  position: sticky;
+  bottom: 0;
+  background-color: #f0f2f5;
+  border-top: 1px solid #ddd;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+  margin-right: 10px;
+}
+
+.chat-send-btn,
+.chat-voice-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+/* ---------- Sidebar (Left Users) ---------- */
+.sidebar {
+  width: 100%;
+  max-width: 280px;
+  height: 100%;
+  background-color: #ff9800; /* Orange color */
+  border-radius: 12px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.sidebar-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: #f57c00;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.sidebar-profile .profile-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+.sidebar-profile .profile-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin-bottom: 15px;
+}
+
+.user-list h6 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.user-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+  color: #fff;
+}
+
+.user-item:hover {
+  background-color: #f57c00;
+}
+
+.avatar-wrapper {
+  position: relative;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+.online-dot {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 9px;
+  height: 9px;
+  background: #4caf50;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+.user-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .home-container {
+    flex-direction: column;
+  }
+  .sidebar-container {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    margin-bottom: 15px;
+  }
+  .chat-container {
+    width: 100%;
+    height: 70vh;
+  }
+}
+
+
+
+
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+  width: 100%;
+  max-width: 280px;
+  height: 100vh;
+  background-color: #ff9800; /* Orange background */
+  border-radius: 12px;
+  padding: 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top profile container */
+.sidebar-profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  flex-shrink: 0; /* Stick to top */
+}
+
+/* Profile image + name */
+.sidebar-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-profile .profile-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+.sidebar-profile .profile-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Dropdown 3 dots button */
+.dropdown-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Dropdown menu (Home & Logout) */
+.dropdown-menu {
+  position: absolute;
+  top: 35px;
+  right: 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 5px 0;
+  width: 130px;
+  display: none;
+  z-index: 20;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 10px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #333;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f2f5;
+}
+
+/* Scrollable area for search + users */
+.sidebar-scroll {
+  flex: 1; /* take remaining height */
+  overflow-y: auto;
+}
+
+/* Search input */
+.search-input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin-bottom: 15px;
+}
+
+/* Users list */
+.user-list h6 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.user-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+  color: #fff;
+}
+
+.user-item:hover {
+  background-color: #f57c00;
+}
+
+.avatar-wrapper {
+  position: relative;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+.online-dot {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 9px;
+  height: 9px;
+  background: #4caf50;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+.user-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* Scrollbar styling */
+.sidebar-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 3px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .home-container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* Sidebar */
+/* Sidebar */
+.sidebar {
+  width: 100%;
+  max-width: 280px;
+  height: 100vh;
+  background-color: #ff9800;
+  border-radius: 12px;
+  padding: 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top Profile + Dropdown */
+.sidebar-profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  flex-shrink: 0;
+  position: relative; /* for dropdown positioning */
+}
+
+.sidebar-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+.profile-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Dropdown button (3 dots) */
+.dropdown-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+  position: absolute;
+  top: 60px; /* upar se space, sidebar top ke hisaab se adjust */
+  right: 0;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  padding: 8px 0;
+  width: 140px;
+  display: none;
+  z-index: 999; /* ensure it appears above all */
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 10px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #333;
+  transition: background 0.2s, color 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f2f5;
+  color: #000;
+}
+
+/* Animation for smooth dropdown */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Scrollable users + search */
+.sidebar-scroll {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin-bottom: 15px;
+}
+
+/* Users list */
+.user-list h6 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.user-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+  color: #fff;
+}
+
+.user-item:hover {
+  background-color: #f57c00;
+}
+
+.avatar-wrapper {
+  position: relative;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+.online-dot {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 9px;
+  height: 9px;
+  background: #4caf50;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+.user-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+}
