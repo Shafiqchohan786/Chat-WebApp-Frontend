@@ -6,7 +6,11 @@ import { Baseurl } from "../../services api/baseurl";
 import { logout } from "../redux/fetaures/authSlice";
 import { reomveSelectedUser, setSelectedUser } from "../redux/fetaures/userSlice";
 
+
+
+
 export const SideBar = ({ socket }) => {
+  
   const { user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const [isDropdownOpen, setDropdownOpen] = useState(false);
