@@ -15,6 +15,7 @@ export default function Login() {
     email: "",
     password: ''
   });
+  const [loading, setLoading] = useState(false);
 
   // handle userlogin data 
   const hadleuserlogin = (e) => {
@@ -31,6 +32,7 @@ export default function Login() {
     }
 
     try {
+      setLoading(true);
       const resp = await axios.post(`${Baseurl}/api/auth/login`, userData);
       const data = resp.data;
       if (resp.status === 200) {
@@ -42,6 +44,8 @@ export default function Login() {
     } catch (error) {
       if (error?.response?.data) toast.error(error.response.data.message);
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -80,7 +84,9 @@ export default function Login() {
               />
             </div>
 
-            <button type="submit" className="login-btn">Login</button>
+            <button type="submit" className="login-btn" disabled={loading}>
+              {loading ? <div className="loader"></div> : "Login"}
+            </button>
 
             <p className="register-link">
               Don't have an account? 
