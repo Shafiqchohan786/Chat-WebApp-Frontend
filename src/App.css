@@ -830,35 +830,37 @@
 
 
 
-
-/* ---------- Buttons ---------- */
-.login-btn,
 .register-btn {
   width: 100%;
-  padding: 14px 0;
+  padding: 12px;
   background: linear-gradient(135deg, #ee0979, #ff6a00); /* Pink to Orange gradient */
-  border: none;
-  border-radius: 10px;
   color: #fff;
-  font-size: 17px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 10px rgba(238, 9, 121, 0.3); /* soft shadow */
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Hover Effect */
-.login-btn:hover,
-.register-btn:hover {
-  transform: translateY(-3px);
-  background: linear-gradient(135deg, #ff6a00, #ee0979); /* reverse gradient */
-  box-shadow: 0 6px 14px rgba(255, 106, 0, 0.4);
+.register-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
 }
 
-/* Active (click effect) */
-.login-btn:active,
-.register-btn:active {
-  transform: translateY(0);
-  box-shadow: 0 3px 8px rgba(255, 106, 0, 0.3);
+.loader {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
