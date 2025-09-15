@@ -12,9 +12,11 @@ export default function Register() {
     password: '',
     profile: null,
   });
+  const [loading, setLoading] = useState(false); // ✅ New loading state
 
   const handlsubmit = async (e) => {
     e.preventDefault();
+    setLoading(true); // ✅ Start loader
     try {
       const formadata = new FormData();
       formadata.append('name', user.name);
@@ -35,6 +37,8 @@ export default function Register() {
     } catch (error) {
       if (error?.response?.data) toast.error(error.response.data.message);
       console.log(error);
+    } finally {
+      setLoading(false); // ✅ Stop loader
     }
   }
 
@@ -106,7 +110,9 @@ export default function Register() {
               />
             </div>
 
-            <button type="submit" className="register-btn">Register</button>
+            <button type="submit" className="register-btn" disabled={loading}>
+              {loading ? <span className="loader"></span> : "Register"}
+            </button>
 
             <p className="login-link">
               Already have an account? 
